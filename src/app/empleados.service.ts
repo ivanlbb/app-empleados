@@ -21,4 +21,17 @@ export class EmpleadosService {
                                     "\n" + "Salario: " + empleado.salario);
     this.empleados.push(empleado)
   }
+
+  encontrarEmpleado(indice: number): Empleado {
+    return this.empleados[indice];
+  }
+
+  actualizarEmpleado(indice: number, empleado: Empleado) {
+    let empleadoModificado = this.empleados[indice]
+    empleadoModificado.nombre = empleado.nombre;
+    empleadoModificado.apellido = empleado.apellido;
+    empleadoModificado.salario = empleado.salario;
+    empleadoModificado.cargo = empleado.cargo;
+  }
+
 }

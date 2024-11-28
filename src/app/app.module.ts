@@ -12,6 +12,7 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { ProyectosComponentComponent } from './proyectos-component/proyectos-component.component';
 import { QuienesComponentComponent } from './quienes-component/quienes-component.component';
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
+import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ContactoComponentComponent } from './contacto-component/contacto-compon
     HomeComponentComponent,
     ProyectosComponentComponent,
     QuienesComponentComponent,
-    ContactoComponentComponent
+    ContactoComponentComponent,
+    ActualizaComponentComponent
   ],
   imports: [
     BrowserModule,
