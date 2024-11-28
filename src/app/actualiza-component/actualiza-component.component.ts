@@ -34,6 +34,11 @@ export class ActualizaComponentComponent implements OnInit{
     this.volverHome();
   }
 
+  eliminaEmpleado() {
+    this.empleadosService.eliminarEmpleado(this.indice);
+    this.volverHome();
+  }
+    
   volverHome(){
     this.router.navigate([''])
   }
