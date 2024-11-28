@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Empleado } from './empleado.model';
+import { ServicioEmpleadosService } from './servicio-empleados.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmpleadosService {
 
-  constructor() { }
+  constructor(private servicioAlert: ServicioEmpleadosService) { }
   
   empleados: Empleado[]=[
     new Empleado("Ivan", "Lopez-Baltasar", "Presidente", 80000),
@@ -15,7 +16,9 @@ export class EmpleadosService {
     new Empleado("Laura", "Lopez", "Administrativo", 15000),
   ];
 
-  agregarEmpeadoServicio(empleado: Empleado){
+  agregarEmpleadoServicio(empleado: Empleado){   
+    this.servicioAlert.muestraMensaje("Se va a agrevar el empleado: " + empleado.getNombreCompleto() +
+                                    "\n" + "Salario: " + empleado.salario);
     this.empleados.push(empleado)
   }
 }
