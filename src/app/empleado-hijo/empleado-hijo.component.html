@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+         <div>
+            {{indice+1}} - {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} <span [ngStyle]="{color: empleadoDeLista.cargo=='Presidente'?'red':'black'}">{{empleadoDeLista.cargo}} </span> <span [ngClass]="{salarioGordo: empleadoDeLista.salario > 45000}">{{empleadoDeLista.salario}}</span>
+         </div>         
+         <ul style="list-style: none;">
+            <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
+         </ul>
+         <app-caracteristicas-empleado (caracteristicasEmpleado)="agregarCaracteristica($event)"></app-caracteristicas-empleado>
+         <p></p>
+      </div>     
+    </div>
+</div>
