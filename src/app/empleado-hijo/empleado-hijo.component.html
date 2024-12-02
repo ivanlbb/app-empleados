@@ -2,8 +2,10 @@
     <div class="row">
       <div class="col">
          <div>
-            {{indice+1}} - {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} <span [ngStyle]="{color: empleadoDeLista.cargo=='Presidente'?'red':'black'}">{{empleadoDeLista.cargo}} </span> <span [ngClass]="{salarioGordo: empleadoDeLista.salario > 45000}">{{empleadoDeLista.salario}}</span>
-         </div>         
+            {{indice+1}} - {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} <span [ngStyle]="{color: empleadoDeLista.cargo=='Presidente'?'red':'black'}"> {{empleadoDeLista.cargo}} </span> <span [ngClass]="{salarioGordo: empleadoDeLista.salario > 45000}">{{empleadoDeLista.salario}}</span>
+            <span style="padding-left: 10px;"><a [routerLink]="['/actualizar', indice]" [queryParams]="{accion:'1'}">Actualizar</a></span>
+            <span style="padding-left: 10px;"><a [routerLink]="['/actualizar', indice]" [queryParams]="{accion:'2'}">Eliminar</a></span>
+         </div>
          <ul style="list-style: none;">
             <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
          </ul>
