@@ -16,7 +16,18 @@ export class HomeComponentComponent implements OnInit {
     //this.empleados = empleadosService.empleados;
   }
   ngOnInit(): void {
-    this.empleados = this.empleadosService.empleados;
+    // this.empleados = this.empleadosService.empleados;
+    this.empleadosService.obtenerEmpleados().subscribe({
+      next: (v) => {
+        console.log(v);
+        this.empleados = v;
+        this.empleadosService.setEmpleados(this.empleados);
+      },
+      error: (e) => console.error(e),
+      complete: () => {
+        console.info('Array de empleados obtenido');           
+      }
+    })
   }
 
   cuadroNombre: string="";

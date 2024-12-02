@@ -9,13 +9,17 @@ import { DataService } from './data.service';
 export class EmpleadosService {
 
   constructor(private servicioAlert: ServicioEmpleadosService, private dataService:DataService) { }
-  
-  empleados: Empleado[]=[
-    new Empleado("Ivan", "Lopez-Baltasar", "Presidente", 80000),
-    new Empleado("Ana", "Martin", "Directora", 50000),
-    new Empleado("Maria", "Fernandez", "Jefa", 45000),
-    new Empleado("Laura", "Lopez", "Administrativo", 15000),
-  ];
+  empleados: Empleado[] = [];
+  // empleados: Empleado[]=[
+  //   new Empleado("Ivan", "Lopez-Baltasar", "Presidente", 80000),
+  //   new Empleado("Ana", "Martin", "Directora", 50000),
+  //   new Empleado("Maria", "Fernandez", "Jefa", 45000),
+  //   new Empleado("Laura", "Lopez", "Administrativo", 15000),
+  // ];
+
+  setEmpleados(misEmpleados: Empleado[]){
+    this.empleados = misEmpleados;
+  }
 
   agregarEmpleadoServicio(empleado: Empleado){   
     this.servicioAlert.muestraMensaje("Se va a agrevar el empleado: " + empleado.getNombreCompleto() +
@@ -34,10 +38,21 @@ export class EmpleadosService {
     empleadoModificado.apellido = empleado.apellido;
     empleadoModificado.salario = empleado.salario;
     empleadoModificado.cargo = empleado.cargo;
+    this.dataService.actualizarEmpleados(indice, empleado);
   }
 
   eliminarEmpleado(indice: number) {
     this.empleados.splice(indice, 1);
+    this.dataService.eliminarEmpleado(indice);
+
+    if (this.empleados.length > 0){
+      //para "reconstruir" el indice, volvemos a guardar el array completo
+      console.log(this.empleados);
+      this.dataService.guardarEmpleados(this.empleados)
+    }
   }
 
+  obtenerEmpleados(){
+    return this.dataService.cargarEmpleados();
+  }
 }
