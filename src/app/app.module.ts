@@ -14,6 +14,9 @@ import { QuienesComponentComponent } from './quienes-component/quienes-component
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
+import { DataService } from './data.service';
+import {  provideHttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -32,8 +35,9 @@ import { ErrorPersonalizadoComponent } from './error-personalizado/error-persona
     AppRoutingModule,
     FormsModule
     
+    
   ],
-  providers: [ServicioEmpleadosService, EmpleadosService],
+  providers: [ServicioEmpleadosService, EmpleadosService, DataService, provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
