@@ -5,13 +5,17 @@ import { ProyectosComponentComponent } from './proyectos-component/proyectos-com
 import { QuienesComponentComponent } from './quienes-component/quienes-component.component';
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
+import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponentComponent},
   {path:'proyectos', component: ProyectosComponentComponent},
   {path:'quienes', component: QuienesComponentComponent},
   {path:'contacto', component: ContactoComponentComponent},
-  {path:'actualizar/:id', component: ActualizaComponentComponent}
+  {path:'actualizar/:id', component: ActualizaComponentComponent},
+  
+  //cualquier cosa diferente a lo anterior, va al componente ErrorPersonalizado. Tiene que estar el ultimo para que funcione bien
+  {path:'**', component: ErrorPersonalizadoComponent}
 ];
 
 @NgModule({
