@@ -16,6 +16,7 @@ import { ActualizaComponentComponent } from './actualiza-component/actualiza-com
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
 import { DataService } from './data.service';
 import {  provideHttpClient } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {  provideHttpClient } from '@angular/common/http';
     QuienesComponentComponent,
     ContactoComponentComponent,
     ActualizaComponentComponent,
-    ErrorPersonalizadoComponent
+    ErrorPersonalizadoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

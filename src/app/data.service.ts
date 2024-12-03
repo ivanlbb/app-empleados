@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Empleado } from './empleado.model';
 import { Observable } from 'rxjs';
+import { LoginService } from './login.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,11 @@ import { Observable } from 'rxjs';
 export class DataService {
   URL_DATOS = "https://mis-clientes-e9e04-default-rtdb.europe-west1.firebasedatabase.app/datos.json";
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private loginService: LoginService) { }
 
   cargarEmpleados(): Observable<any>{
-    return this.httpClient.get<any>(this.URL_DATOS);
+    const token = this.loginService.getIdToken();
+    return this.httpClient.get<any>(this.URL_DATOS+'?auth='+token);
   }
 
   guardarEmpleados(empleados: Empleado[]){
