@@ -6,9 +6,11 @@ import { QuienesComponentComponent } from './quienes-component/quienes-component
 import { ContactoComponentComponent } from './contacto-component/contacto-component.component';
 import { ActualizaComponentComponent } from './actualiza-component/actualiza-component.component';
 import { ErrorPersonalizadoComponent } from './error-personalizado/error-personalizado.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponentComponent},
+  {path:'login', component: LoginComponent},
   {path:'proyectos', component: ProyectosComponentComponent},
   {path:'quienes', component: QuienesComponentComponent},
   {path:'contacto', component: ContactoComponentComponent},
