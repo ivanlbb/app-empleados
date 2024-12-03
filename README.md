@@ -6,4 +6,7 @@ Angular training project.
 * Services
 * Routing
 * Firebase CRUD
+* Access token
+* Cookie
+* Guard
 
