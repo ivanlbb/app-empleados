@@ -17,6 +17,7 @@ import { ErrorPersonalizadoComponent } from './error-personalizado/error-persona
 import { DataService } from './data.service';
 import {  provideHttpClient } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { LoginComponent } from './login/login.component';
     ActualizaComponentComponent,
     ErrorPersonalizadoComponent,
     LoginComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,7 @@ import { LoginComponent } from './login/login.component';
     
     
   ],
-  providers: [ServicioEmpleadosService, EmpleadosService, DataService, provideHttpClient()],
+  providers: [ServicioEmpleadosService, EmpleadosService, DataService, provideHttpClient(), CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
