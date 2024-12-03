@@ -32,6 +32,7 @@ import { CookieService } from 'ngx-cookie-service';
     ActualizaComponentComponent,
     ErrorPersonalizadoComponent,
     LoginComponent
+    
   ],
   imports: [
     BrowserModule,
